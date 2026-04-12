@@ -196,7 +196,7 @@ BASE_URL=http:localhost:5000 ./bash_script.sh
 This is a manual smoke-style flow, not a pytest suite.
 
 ## Demo GIF
-![Demo_Api_GIF](demo_api.mp4)
+[Demo_Api_GIF](demo_app.mp4)
 
 ## Notes
 
