@@ -5,7 +5,7 @@ import os
 
 class Config:
 
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'una_clave_segura_por_defecto')
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'super_secret_key')
 
     DEBUG = False
 
