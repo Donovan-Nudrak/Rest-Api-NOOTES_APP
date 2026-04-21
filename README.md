@@ -21,10 +21,10 @@ Backend HTTP API for user registration, session-based authentication, and person
 
 The code is split into four main layers:
 
-- `**routes/**` — HTTP adapters. Read JSON bodies and `session`, call services, return `jsonify(...)` with HTTP status codes. No business rules beyond wiring.
-- `**services/**` — Application logic: validation orchestration, database queries, commits, sharing rules, and structured return values (`status`, `message` or `errors`, `code`). Optional calls to `log_api_action` for auditing.
-- `**models/**` — SQLAlchemy models (`User`, `Note`, association table `note_shares`) defining tables and relationships.
-- `**utils/**` — Cross-cutting helpers: input validators (`validators.py`), user-facing strings (`messages.py`), password helpers (`security.py`), file logging (`logger.py`).
+- `routes/` — HTTP adapters. Read JSON bodies and `session`, call services, return `jsonify(...)` with HTTP status codes. No business rules beyond wiring.
+- `services/` — Application logic: validation orchestration, database queries, commits, sharing rules, and structured return values (`status`, `message` or `errors`, `code`). Optional calls to `log_api_action` for auditing.
+- `models/` — SQLAlchemy models (`User`, `Note`, association table `note_shares`) defining tables and relationships.
+- `utils/` — Cross-cutting helpers: input validators (`validators.py`), user-facing strings (`messages.py`), password helpers (`security.py`), file logging (`logger.py`).
 
 `app.py` loads configuration, registers blueprints, and runs `db.create_all()` inside an app context. `database/db.py` exports the shared `SQLAlchemy()` instance used by models and the app.
 
