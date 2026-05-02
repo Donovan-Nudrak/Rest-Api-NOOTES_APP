@@ -1,6 +1,33 @@
 
 # Rest-Api-NOTES_APP
 Backend REST API for user authentication and collaborative note management, featuring session-based auth and a layered architecture (routes, services, models).
+
+---
+
+## Live API
+https://rest-api-nootesapp-production.up.railway.app
+
+## Quick test
+
+```bash
+curl -X POST https://rest-api-nootesapp-production.up.railway.app/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"testuser","email":"test@example.com","password":"Aa1!aaaaaaaa"}'
+```
+
+The query is likely to show the following response
+
+```json
+{
+  "errors": [
+    "User already exists.",
+    "Email already exists."
+  ]
+}
+```
+
+---
+
 # Notes REST API
 
 Backend HTTP API for user registration, session-based authentication, and personal notes. Users can create notes, list notes they own or that were shared with them, update accessible notes, delete their own notes, and share a note with another registered user by email. Responses are JSON; there is no HTML frontend in this repository.
